@@ -6,13 +6,11 @@ public class InterpretData {
 
 	public List<String> interpret(List<String> symptomsbruts) {
 		List<String> result = new ArrayList<String>();
-		HashSet<String> setname = new HashSet<String>(symptomsbruts);
-//			List<String> name = new ArrayList<String>(setname);	
+		HashSet<String> setname = new HashSet<String>(symptomsbruts); // symptoms sans duplicats
 
 		try {
-//				for(int i=0;i<name.size();i++) { //for each
 			for (String str : setname) {
-			result.add(str + " : " + Collections.frequency(symptomsbruts, str) + "\n");
+			result.add(str + " : " + Collections.frequency(symptomsbruts, str) + "\n"); // occurence des symptoms
 		}
 
 		} catch (IndexOutOfBoundsException e) {
